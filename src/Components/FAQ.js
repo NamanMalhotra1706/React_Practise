@@ -1,35 +1,39 @@
-import React , { useState } from "react"
-export default function FAQ(){
+// import React , { useState } from "react"
+export default function FAQ(props){
 
-    const [mystyle ,setMyStyle]=useState({
-        color:'white',
-        backgroundColor:'black'
+    // const [mystyle ,setMyStyle]=useState({
+    //     color:'white',
+    //     backgroundColor:'black'
 
-    })
+    // })
+    // const [btnState ,newBtnState]=useState("Enable Light Mode");
 
-    const [btnState ,newBtnState]=useState("Enable Light Mode")
+  let mystyle={
+    color :props.mode ==='dark'?'white':'black',
+    backgroundColor :props.mode ==='dark'?'#042743':'white',
+    
 
+  }
 
-
-    const ChangeMode=()=>{
-        if(mystyle.color==='white'){
-            setMyStyle({
+    // const ChangeMode=()=>{
+    //     if(mystyle.color==='white'){
+    //         setMyStyle({
                 
-                color:'black',
-                backgroundColor:'white',
-                border : '2px solid white'
-            })
-            newBtnState("Enable Dark Mode")
-        }
+    //             color:'black',
+    //             backgroundColor:'white',
+    //             border : '2px solid white'
+    //         })
+    //         newBtnState("Enable Dark Mode")
+    //     }
          
-        else{
-            setMyStyle({
-                color:'white',
-                backgroundColor:'black'
-            })
-            newBtnState("Enable Light Mode")
-        }
-    }
+    //     else{
+    //         setMyStyle({
+    //             color:'white',
+    //             backgroundColor:'black'
+    //         })
+    //         newBtnState("Enable Light Mode")
+    //     }
+    // }
 
 
 
@@ -73,9 +77,10 @@ export default function FAQ(){
 </div>
 
 
-<div className="container">
-<button onClick={ChangeMode} type="button" class="btn btn-primary" >{btnState}</button>
-</div>
+ <div className="container">
+
+{/* <button onClick={ChangeMode} type="button" class="btn btn-primary" >{btnState}</button> */}
+</div> 
 </div>
         </>
     )

@@ -46,7 +46,7 @@ const showAlert=(message,typeofmessage)=>{
         <Routes>
           {/* <Route path="/" element={}/> */}
            
-          <Route exact path="/FAQ" element={<FAQ />}/>
+          <Route exact path="/FAQ" element={<FAQ mode={mode}/>}/>
           <Route exact path="/TextUtilts" element={<TextUtilts showAlert={showAlert} heading="Enter the Text to anyalyse below" mode={mode}/> }/>
         </Routes>
     </BrowserRouter>
