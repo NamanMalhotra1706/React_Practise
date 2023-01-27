@@ -5,7 +5,7 @@ import FAQ from './Components/FAQ'
 import TextUtilts from './Components/TextUtilts'
 import { useState } from 'react';
 import Alert from './Components/Alert';
-import{BrowserRouter, Routes,Route}from "react-router-dom";
+import{Routes,Route}from "react-router-dom";
 
 function App() {
   const  [mode,setMode] = useState('light');
@@ -41,16 +41,12 @@ const showAlert=(message,typeofmessage)=>{
     
     <Navbar title="Sports Cart" Items="Sports Items" mode={mode} toggleMode={togglemode}/>
     <Alert alert={alert} /> 
-    
-    <BrowserRouter>
+  
         <Routes>
           {/* <Route path="/" element={}/> */}
-           
           <Route exact path="/FAQ" element={<FAQ mode={mode}/>}/>
           <Route exact path="/TextUtilts" element={<TextUtilts showAlert={showAlert} heading="Enter the Text to anyalyse below" mode={mode}/> }/>
         </Routes>
-    </BrowserRouter>
-    
     </>
   );
 }
