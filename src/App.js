@@ -21,7 +21,12 @@ const showAlert=(message,typeofmessage)=>{
       setAlert(null);
   },2000)
 }
+
+  
+
   const togglemode=()=>{
+   
+
     if(mode==='light'){
     setMode('dark');
     document.body.style.backgroundColor='#042743';
@@ -39,7 +44,7 @@ const showAlert=(message,typeofmessage)=>{
   return (
     <>
     
-    <Navbar title="Sports Cart" Items="Sports Items" mode={mode} toggleMode={togglemode}/>
+    <Navbar title="Texting"  mode={mode} toggleMode={togglemode}/>
     <Alert alert={alert} /> 
   
         <Routes>

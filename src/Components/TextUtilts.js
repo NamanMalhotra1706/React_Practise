@@ -22,9 +22,7 @@ import React , {useState} from 'react'
         props.showAlert("Extra Spaces is Removed","success")
     }
     const CopyText=()=>{
-        var text = document.getElementById('myBox');
-        text.select();
-        navigator.clipboard.writeText(text.value);
+        navigator.clipboard.writeText(text);
         props.showAlert("Text is copied","success")
     }
 
@@ -56,7 +54,7 @@ import React , {useState} from 'react'
                 <button className="btn btn-primary mx-1 my-1" onClick={ClearText}>Clear Text</button>
             </div>
             <div className='container my-3' style={{color: props.mode==='dark'?'white':'#042743'}}>
-                <h4 className="py-4"> {text.split(" ").filter((element)=>{return element.length!==0}).length} Words and {text.length} characters</h4>
+                <h4 className="py-4"> {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Words and {text.length} characters</h4>
                 <h4 className="pt-2.5"> Preview your Text </h4>
                 <p>{text.length>0?text:"Enter Text to Preview"}</p>
             </div>
