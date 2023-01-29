@@ -6,6 +6,7 @@ import TextUtilts from './Components/TextUtilts'
 import { useState } from 'react';
 import Alert from './Components/Alert';
 import{Routes,Route}from "react-router-dom";
+import Kepper from './Components/Keeper';
 
 function App() {
   const  [mode,setMode] = useState('light');
@@ -41,15 +42,19 @@ const showAlert=(message,typeofmessage)=>{
       document.title="Project -Light Mode";
     }
   }
+
   return (
     <>
     
     <Navbar title="Texting"  mode={mode} toggleMode={togglemode}/>
     <Alert alert={alert} /> 
+    
+    <></>
   
         <Routes>
           {/* <Route path="/" element={}/> */}
           <Route exact path="/FAQ" element={<FAQ mode={mode}/>}/>
+          <Route  path='/Kepper' element={<Kepper mode={mode} className = "note"/>}/>
           <Route exact path="/TextUtilts" element={<TextUtilts showAlert={showAlert} heading="Enter the Text to anyalyse below" mode={mode}/> }/>
         </Routes>
     </>
