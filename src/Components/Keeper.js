@@ -1,23 +1,12 @@
 import React from 'react';
 
-
-
-const footStyle={
-        position : 'absolute',
-        bottom:"0",
-        width:"90%",
-        height: "2.5rem",
-        textAlign : 'center'
-    };
-
-
  export default function Kepper(props){
 
     const styles = {
         note : {
             background : "#fff",
             borderRadius : "7px",
-            boxshadow : "0 2px 5px white",
+            boxShadow : "0px 2px 5px #9E9E9E",
             padding: "10px",
             width: "240px",
             margin:"16px",
@@ -34,37 +23,34 @@ const footStyle={
             marginBottom: "10px",
             whiteSpace: "pre-wrap",
             wordWrap: "break",
-        }
+        },
+        button : {
+            position: "relative", 
+            margin : "0 0 0 160px",
+            background: "#f5ba13",
+            color: "#fff",
+            border: "none",
+            boxShadow: "0 1px 3px #9E9E9E",
+            cursor: "pointer",
+            outline: "none",
+          }
 
     }
-
-    // const handleOnChange = (event)=>{
-    //     console.log("On Change");
-    //     setText(event.target.value); 
-    // }
-
-    
-    // const[text,setText]=useState();
-   
+   function funcDelete(){
+        props.onDelete(props.id);
+     }
    return(
     <>
-    
         <div className='container'>
-            <h1 className='m-3' style={{color: props.mode==='dark'?'white':'#042743'}}>Kepper</h1>
-            <h4 className='m-15 p-15' style={{color: props.mode==='dark'?'white':'#042743'}}>Keep Your text secret from every one</h4>
-            
+           
             <div  style={styles.note}>
-                <h3 style={styles.h1}>This is The tytle</h3>
-                <p>This is the Content</p>
+                <h3 style={styles.h1}>{props.keeperTitle}</h3>
+                <p>{props.message}</p>
+                <button onClick={funcDelete} style={styles.button}>Delete</button>
             </div>
-        
-            <footer style={footStyle}>
-                copyright © By Naman Malhotra
-            </footer>
         </div>
             
     </>
-        
         )
 
  }
